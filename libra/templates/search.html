@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% block title %} <title>Libra | search</title> {% endblock %}
+
+{% block head_extras %}
+
+	{% load staticfiles %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mainsearch.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'side_menu/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'side_menu/css/reset.css' %}">
+	<script type="text/javascript" src="{% static 'side_menu/js/main.js' %}"></script>
+	<script type="text/javascript" src="{% static 'side_menu/js/modernizr.js' %}"></script>
+
+{% endblock %}
+
+	{% block loader %}
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+	        		<div class="loader-section section-right"></div>
+	        	</div>
+	{% endblock %}
+
+	<main class="cd-main-content is-fixed">
+		<div class="cd-tab-filter-wrapper">
+			<div class="cd-tab-filter">
+				<ul class="cd-filters" style="z:index:10000">
+					<li class="placeholder">
+						<a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
+					</li>
+					<li class="filter"><a id="relid" class="selected" href="/search/sort/relevance" data-type="all"><b>Relevance</b></a></li>
+					<li class="filter" data-filter=".color-1"><a id="prltoh" href="/search/sort/lowtohigh" data-type="color-1"><b>Price low - high</b></a></li>
+					<li class="filter" data-filter=".color-2"><a id="prhtol" href="/search/sort/hightolow" data-type="color-2"><b>Price high - low</b></a></li>
+				</ul> <!-- cd-filters -->
+			</div> <!-- cd-tab-filter -->
+		</div> <!-- cd-tab-filter-wrapper -->
+
+		<section style="z:index:1" class="cd-gallery">
+
+			<div id="allcards">
+
+				<div class="row">
+
+					{% for product in allprods %}
+
+						<div class="col l3 m6 s12">
+
+							<div class="card medium hoverable">
+							    	<div class="card-image">
+							      		<img class="" src="{{ product.imgurl }}">
+							    	</div>
+							    	<div class="card-content">
+							      		<h4 class="text-darken-2 activator valign center-align">{{ product.title }}</h4>
+							      		<p class="center-align">By <span class="brand">{{ product.brand }}</span></p>
+									<p class="center-align">Price : <span class="sp"> Rs. {{ product.sp }}</span></p>
+							    	</div>
+								<a target="_blank" href="/compare/{{product.id}}">
+								    	<div class="card-action">
+										<p>Compare</p>
+									</div>
+								</a>
+						  	</div>
+
+						</div>
+
+					{% endfor %}
+
+				</div>
+
+			</div>
+
+			<div class="cd-filter">
+				<div id="brandsfilter">
+
+					<form action="/search/filter">
+
+						<h4><i class="material-icons prefix valign"> list </i> Brands</h4>
+
+						{% for brand in brands %}
+							<p>
+								<input type="checkbox" name="{{ brand }}" id="idbrand{{ forloop.counter }}" checked="checked" />
+								<label name="labelbrand{{ forloop.counter }}" for="idbrand{{ forloop.counter }}" value="{{ brand }}"> {{ brand }} </label>
+							</p>
+						{% endfor %}
+
+						<h4><i class="material-icons prefix"> code </i> Price</h4>
+						<h6>(Select the upper price limit)</h6>
+			    			<p class="range-field">
+						      	<input type="range" id="test005" min="{{ min_price }}" max="{{ max_price }}" value="{{ max_price }}" />
+						</p>
+						<p>Max price set is : <span id="display_max_price">Rs. {{ max_price }}</span></p>
+
+						<input type="text" style="visibility:hidden" value="{{ max_price }}" id="hidden-price" name="hidden-price">
+
+						<button class="btn waves-effect waves-light" type="submit" id="action">Filter
+							<i class="material-icons right">send</i>
+					  	</button>
+
+					</form>
+
+				</div>
+
+				<a href="#0" class="cd-close">Close</a>
+
+			</div> <!-- cd-filter -->
+
+		</section>
+
+		<a href="#0" class="cd-filter-trigger">Filters</a>
+
+	</main> <!-- cd-main-content -->
+
+	<script type="text/javascript">
+
+		$( "#test005" ).change(function() {
+		  	var maxprice = $(this).val()
+		  	// alert(maxprice)
+		  	$("#hidden-price").val(maxprice)
+		  	$("#display_max_price").text("Rs. " + maxprice)
+		});
+
+	</script>
+
+{% endblock %}

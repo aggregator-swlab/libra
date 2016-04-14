@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>Libra | compare</title> {% endblock %}
+
+{% block head_extras %}
+
+	{% load staticfiles %}
+
+	<script type="text/javascript" src="{% static 'js/get_delivery.js' %}"></script>
+
+{% endblock %}
+
+{% block body %}
+
+	{% block loader %}
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+	        		<div class="loader-section section-right"></div>
+	        	</div>
+	{% endblock %}
+
+	<div class="container">
+
+		<div class="outer_box"><img class="inner_img" src="{{ imageurl }}" width="200px"></div>
+		<h4> {{ title }} </h4>
+		<p> Product description : {% if desc %} {{ desc }} {% else %} NA {% endif %} </p>
+
+		<!-- {% for product in allprods %}
+
+			{% if product.url %}
+
+				<img src="{{ product.imgurl }}" height="200px" style="float:left">
+				<center><h3 style="color:red">Product from {{product.server}}</h3>
+				<a target="_blank" href="{{product.url}}"><h3>{{ product.title }} </h3></a>
+				<h4>Price : {{ product.price }} </h4>
+				<h5>Rating : {{ product.rating }}</h5></center>
+
+			{% else %}
+
+				<img src="http://www.oolongpuerhtea.com/public/images/no_product_img.jpg" height="200px" style="float:left">
+				<center><h3 style="color:red">Not available on
+									{% if forloop.counter == 1 %} Flipkart {% endif %}
+									{% if forloop.counter == 2 %} Amazon {% endif %}
+									{% if forloop.counter == 3 %} Snapdeal {% endif %}
+									{% if forloop.counter == 4 %} Ebay {% endif %}
+					</h3></center>
+
+			{% endif %}
+
+		{% endfor %} -->
+
+		<table class="centered responsive-table">
+		        	<thead>
+		          		<tr>
+		              		<th data-field="flipkart"><img width="200px" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/flipkart.png"></th>
+		              		<th data-field="amazon"><img width="200px" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/amazon.png"></th>
+		              		<th data-field="snapdeal"><img width="200px" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/snapdeal.png"></th>
+		              		<th data-field="ebay"><img width="200px" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/ebay.png"></th>
+		          		</tr>
+		        	</thead>
+
+		        	<tbody>
+
+		        		<tr>
+
+		          			{% for product in allprods %}
+
+		          				<td style="width:25%">
+
+			          				{% if product.url %}
+			          					<p>Price : {{ product.price }} </p>
+			          				{% else %}
+								<p>Price : NA</p>
+							{% endif %}
+
+						</td>
+
+		          			{% endfor %}
+
+		          		</tr>
+		          		<tr>
+
+		          			{% for product in allprods %}
+
+		          				<td style="width:25%">
+
+			          				{% if product.url %}
+			          					<p>Rating : {{ product.rating }} </p>
+							{% else %}
+								<p>Rating : NA</p>
+							{% endif %}
+
+						</td>
+
+		          			{% endfor %}
+
+		          		</tr>
+
+		          		<tr>
+
+		          			<td class="flipkart_delivery">
+		          				<div class="preloader-wrapper small active">
+			          				<div class="spinner-layer spinner-blue-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div>
+						</div>
+					</td>
+					<td class="amazon_delivery">
+		          				<div class="preloader-wrapper small active">
+			          				<div class="spinner-layer spinner-blue-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div>
+						</div>
+					</td>
+					<td class="snapdeal_delivery">
+		          				<div class="preloader-wrapper small active">
+			          				<div class="spinner-layer spinner-blue-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div>
+						</div>
+					</td>
+					<td class="ebay_delivery">
+		          				<div class="preloader-wrapper small active">
+			          				<div class="spinner-layer spinner-blue-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div>
+						</div>
+					</td>
+
+		          		</tr>
+
+		          		<tr>
+
+		          			{% for product in allprods %}
+
+		          				<td style="width:25%">
+
+			          				{% if product.url %}
+
+			          					{% if forloop.counter == 1 %}
+			          						<a target="_blank" href="{{product.url}}" class="flipkart_site_link waves-effect waves-light btn-large"><i class="material-icons right"><img class="icon_img" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/flipkart_small.png"></i>Grab this</a>
+			          					{% endif %}
+			          					{% if forloop.counter == 2 %}
+			          						<a target="_blank" href="{{product.url}}" class="amazon_site_link waves-effect waves-light btn-large"><i class="material-icons right"><img class="icon_img" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/amazon_small.png"></i>Grab this</a>
+			          					{% endif %}
+			          					{% if forloop.counter == 3 %}
+			          						<a target="_blank" href="{{product.url}}" class="snapdeal_site_link waves-effect waves-light btn-large"><i class="material-icons right"><img class="icon_img" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/snapdeal_small.png"></i>Grab this</a>
+			          					{% endif %}
+			          					{% if forloop.counter == 4 %}
+			          						<a target="_blank" href="{{product.url}}" class="ebay_site_link waves-effect waves-light btn-large"><i class="material-icons right"><img class="icon_img" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/ebay_small.png"></i>Grab this</a>
+			          					{% endif %}
+
+			          				{% else %}
+
+			          					{% if forloop.counter == 1 %}
+			          						<a href="#0" class="flipkart_site_link waves-effect waves-light btn-large disabled"><i class="material-icons right"><img class="icon_img" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/flipkart_small.png"></i>Grab this</a>
+			          					{% endif %}
+			          					{% if forloop.counter == 2 %}
+			          						<a href="#0" class="amazon_site_link waves-effect waves-light btn-large disabled"><i class="material-icons right"><img class="icon_img" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/amazon_small.png"></i>Grab this</a>
+			          					{% endif %}
+			          					{% if forloop.counter == 3 %}
+			          						<a href="#0" class="snapdeal_site_link waves-effect waves-light btn-large disabled"><i class="material-icons right"><img class="icon_img" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/snapdeal_small.png"></i>Grab this</a>
+			          					{% endif %}
+			          					{% if forloop.counter == 4 %}
+			          						<a href="#0" class="ebay_site_link waves-effect waves-light btn-large disabled"><i class="material-icons right"><img class="icon_img" src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/ebay_small.png"></i>Grab this</a>
+			          					{% endif %}
+
+							{% endif %}
+
+						</td>
+
+		          			{% endfor %}
+
+		          		</tr>
+
+		        	</tbody>
+	      	</table>
+
+	</div>
+
+      	<style type="text/css">
+
+      		body
+      		{
+      			background-color: white !important;
+      		}
+
+      		.outer_box
+      		{
+      			background-color: white !important;
+      			width: 220px;
+      			margin-left: 50px;
+      			margin-top: 20px;
+      			float: left;
+      			margin-bottom: 100px;
+      		}
+
+      		.inner_img
+      		{
+      			width: 200px;
+      			float: left;
+      			padding-right: 20px;
+      		}
+
+      		p
+      		{
+      			font-size: 20px;
+      			font-weight: light;
+      			padding-left: 50px;
+      			margin-top: 20px;
+      		}
+
+      		h4
+      		{
+      			color: #006b75;
+      			padding-left: 50px;
+      			margin-top: 50px;
+      		}
+
+      		a i img.icon_img
+	  	{
+	  		margin-top: 3px;
+	  		height: 50px;
+	  		width: 50px;
+	  		margin-right: -30px;
+	  	}
+
+	  	/*table td + td, th + th
+	  	{
+	  		border-left: 1px solid gray;
+	  	}*/
+
+
+      	</style>
+
+{% endblock %}

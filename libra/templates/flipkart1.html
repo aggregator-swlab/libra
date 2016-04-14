@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flipkart Initial Links</title>
+</head>
+<body>
+
+	{% for product in allprods %}
+			<p>Title : {{ product.ptitle }} </p>
+			<p>Price : {{ product.pprice }} </p>
+			<p>Link : {{ product.plink }} </p>
+			<p>Rating : {{ product.prating }} </p>
+			<p>Image Url : {{ product.pimgurl }} </p>
+		<br><br><hr><br><br>
+	{% endfor %}
+
+</body>
+</html>

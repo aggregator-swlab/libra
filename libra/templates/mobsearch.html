@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>Libra</title> {% endblock %}
+
+{% block body %}
+
+	<center><h3>Welcome to Aggregator !</h3></center>
+
+	<nav id="specialnav">
+	    	<div class="nav-wrapper">
+	      		<form id="searchbar" action="/search/" method="get">
+	        		<div class="input-field col l8 s8 push-s2">
+	          			<input type="search" class="center-align" placeholder="What are we looking for today??" name="search" required>
+	          			<label for="search"><i class="material-icons">search</i><input style="visibility:hidden" type="submit" value="Search" name="submit"></label>
+	          			<i class="material-icons">close</i>
+	        		</div>
+	      		</form>
+	    	</div>
+	</nav>
+
+	<style type="text/css">
+
+	.homehighlighted
+	{
+		color:white;
+		background-color:#006b75;
+	}
+
+	h3
+	{
+		margin-top: 20% !important;
+	}
+
+	#specialnav
+	{
+		margin-top: 20% !important;
+		margin-left: 15% !important;
+		width: 70% !important;
+	}
+
+	</style>
+
+{% endblock %}

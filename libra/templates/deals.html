@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>Libra | deals</title> {% endblock %}
+
+{% block head_extras %}
+
+	{% load staticfiles %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mainsearch.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'side_menu/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'side_menu/css/reset.css' %}">
+	<script type="text/javascript" src="{% static 'side_menu/js/main.js' %}"></script>
+	<script type="text/javascript" src="{% static 'side_menu/js/modernizr.js' %}"></script>
+
+{% endblock %}
+
+{% block body %}
+
+	{% block loader %}
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+	        		<div class="loader-section section-right"></div>
+	        	</div>
+	{% endblock %}
+
+	<div class="row">
+
+		<h1 class="center-align"> Top deals today... </h1>
+
+		{% for product in all_deals %}
+
+			<div class="col l3 m6 s12">
+
+				<div class="card medium hoverable">
+				    	<div class="card-image">
+				      		<img class="" src="{{ product.imgurl }}">
+				    	</div>
+				    	<div class="card-content">
+				      		<h4 class="blue-text text-darken-2 activator grey-text text-darken-4 valign center-align">{{ product.title }}</h4>
+				      		<!-- <p class="center-align">By <span class="brand">{{ product.brand }}</span></p>
+						<p class="center-align">Price : <span class="sp"> Rs. {{ product.sp }}</span></p> -->
+				    	</div>
+					<a target="_blank" href="{{product.produrl}}">
+					    	<div class="card-action">
+							<p>Get this deal</p>
+						</div>
+					</a>
+			  	</div>
+
+			</div>
+
+		{% endfor %}
+
+	</div>
+
+	<style type="text/css">
+
+		.dealshighlighted
+		{
+			color:white;
+			background-color:#006b75;
+		}
+
+		h1
+		{
+			font-size: 30px;
+			color: black;
+			font-weight: bold;
+			margin: 25px 0;
+		}
+
+		.card
+		{
+			height: 400px !important;
+		}
+
+	</style>
+
+{% endblock %}

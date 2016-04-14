@@ -1,0 +1,83 @@
+.card-image
+{
+        max-height: 200px !important;
+        border-bottom: 1px solid gray;
+        /*height: 200px !important;*/
+}
+
+.card-image img
+{
+        height: 200px !important;
+        max-width: 100% !important;
+        margin-left: 50% !important;
+        transform : translate(-50%,0) !important;
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
+}
+
+.card-content h4
+{
+        font-size: 20px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        text-overflow: ellipsis !important;
+}
+
+.card-content
+{
+        color: black !important;
+}
+
+.card-content p
+{
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+}
+
+.card-content .brand
+{
+        font-size: 20px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        color: #00897b !important;
+}
+
+.card-content .sp
+{
+        font-size: 20px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        color: purple !important;
+}
+
+.card-action
+{
+        background-color: #006b75 !important;
+}
+
+.card-action p
+{
+        font-size: 20px;
+        color: white !important;
+        font-weight: bold;
+        text-align: center;
+}
+
+body
+{
+        background-color: #a1e3e9 !important;
+}
+
+h4
+{
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        font-size: 30px !important;
+        font-weight: bold !important;
+        color: #006b75 !important;
+}
+
+form label
+{
+        color: #512da8 !important;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		{% block title %}
+      		{% endblock %}
+
+      		{% load staticfiles %}
+
+      		<!--Import Google Icon Font-->
+	      	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	      	<!--Import materialize.css-->
+	      	 <!-- <link rel="stylesheet" type="text/css" href="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/materialize/css/materialize.css"> -->
+	      	 <link rel="stylesheet" type="text/css" href="{% static 'materialize/css/materialize.css' %}">
+	      	<!--Let browser know website is optimized for mobile-->
+      		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      		<!--Import jQuery before materialize.js-->
+      		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      		<script type="text/javascript" src="{% static 'materialize/js/materialize.js' %}"></script>
+      		<script type="text/javascript" src="{% static 'js/mobiledropdown.js' %}"></script>
+      		<!-- Preloader -->
+      		<link rel="stylesheet" href="{% static 'preloader/css/main.css' %}">
+		<script src="{% static 'preloader/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+		<script>window.jQuery || document.write('<script src="preloader/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="{% static 'preloader/js/main.js' %}"></script>
+
+      		{% block head_extras %}
+      		{% endblock %}
+
+	</head>
+
+	<body>
+
+		{% block loader %}
+	        	{% endblock %}
+
+		<header class="z-depth-1">
+			<div class="navbar-fixed">
+
+				<nav>
+			      		<div class="nav-wrapper">
+
+			       	 		<a href="/index/" class="brand-logo"><img src=>&nbsp <img src="http://athena.nitc.ac.in/azharullahshariff_b130727cs/aggregator/img/libra.png" style="height:65px; float:left; padding-left:30px;"/>Libra</a>
+			        			<a href="/index/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">&nbsp menu</i></a>
+
+						<ul class="right hide-on-med-and-down">
+				 		  	<li style="margin-right:50px;">
+				         	  	   		<div class="nav-wrapper">
+							      		<form id="searchbar" action="/search/" method="get">
+							        		<div class="input-field col l8 s8 push-s2">
+							          			<input style="width:550px" type="search" placeholder="Search for a product..." name="search" required>
+							          			<label for="search"><i class="material-icons">search</i><input style="visibility:hidden" type="submit" value="Search" name="submit"></label>
+							          			<i class="material-icons">close</i>
+							        		</div>
+							      		</form>
+							    	</div>
+		 				   	</li>
+						  	{% block home_block %}
+						  		<li><a class="homehighlighted" href="/index/">&nbsp&nbsp&nbsp&nbsp HOME &nbsp&nbsp&nbsp&nbsp</a></li>
+						  	{% endblock %}
+				          			<li><a class="dealshighlighted" href="/deals/">&nbsp&nbsp&nbsp&nbsp LATEST DEALS&nbsp;&nbsp&nbsp&nbsp</a></li>
+				          			<li><a class="abouthighlighted" href="/help/">&nbsp&nbsp&nbsp&nbsp HELP &nbsp&nbsp&nbsp&nbsp</a></li>
+			        			</ul>
+						<ul class="side-nav" id="mobile-demo">
+				          			<li><a href="/mobsearch/">SEARCH</a></li>
+				          			<li><a href="/index/">HOME</a></li>
+				          			<li><a href="/deals/">LATEST DEALS</a></li>
+				         	 		<li><a href="/help/">HELP</a></li>
+			      			</ul>
+
+			      		</div>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- <nav>
+		    	<div class="nav-wrapper">
+		      		<form id="searchbar" action="/search/" method="get">
+		        		<div class="input-field col l8 s8 push-s2">
+		          			<input type="search" class="center-align" placeholder="What are we looking for today??" name="search" required>
+		          			<label for="search"><i class="material-icons">search</i><input style="visibility:hidden" type="submit" value="Search" name="submit"></label>
+		          			<i class="material-icons">close</i>
+		        		</div>
+		      		</form>
+		    	</div>
+		</nav> -->
+
+		{% block body %}
+		{% endblock %}
+
+		<style type="text/css">
+
+			body
+			{
+				font-family: Century Gothic;
+				background-color: #a1e3e9;
+			}
+
+			nav
+			{
+				background-color: #009caa !important;
+			}
+
+		</style>
+
+	</body>
+
+</html>
