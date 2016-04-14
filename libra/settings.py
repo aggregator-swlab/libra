@@ -35,8 +35,8 @@ SECRET_KEY = '!t!=ed^ok1^l*q*t4+5lk6l4h7@(lsyhsg&itgk%s+-kva*!ge'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'herokuapp.com', 'heroku.com']
-
+# ALLOWED_HOSTS = ['localhost', 'herokuapp.com', 'heroku.com']
+ALLOWED_HOSTS = [".herokuapp.com", ".researchthroughdesign.org", "localhost"]
 
 # Application definition
 
