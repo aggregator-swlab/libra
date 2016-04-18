@@ -1,15 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
-<head>
-    <title>Page unavailable</title>
-</head>
-<body>
-    <h1>Page unavailable</h1>
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
 
-    <p>Sorry, but the requested page is unavailable due to a
-    server hiccup.</p>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    	  <title>Error 503 | Libra</title>
+	<link rel="icon" type="image/png" href="http://i.imgur.com/UTJNdpZ.png">
+	</head>
 
-    <p>Our engineers have been notified, so check back later.</p>
-</body>
-</html>
+	<style>
+	body{ font-family: Century Gothic;
+		  background-color:#009caa}
+	h1{
+	   color:white;
+	   }
+
+	p{
+	  color:white;
+	  font-size:27px
+	}
+	</style>
+
+
+
+    <body>
+  	<header>
+
+	<div class="col s12">
+    	<div class="left col s3">
+			 <img align="left" src="{{static img/error503.png}}" class="responsive-img">
+    	</div>
+		<div class="col s8 push-s1">
+			 <h1><br><br>Error 503</h1>
+    		 <p>Service Unavailable. The server is currently unable to handle the request due to a
+			 	temporary overloading or maintenance of the server. The implication is that this is a
+				temporary condition which will be alleviated after some delay. Please refresh the page or try again later.</p>
+    		 <center><a onClick="reloader()" class="waves-effect waves-light btn-large">Refresh Page</a><center>
+			 <br>
+		</div>
+	</div>
+
+	<script>
+    	function reloader()
+		 {location.reload()}
+	</script>
+
+	</header>
+	</body>
+  </html>
