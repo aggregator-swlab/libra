@@ -12,12 +12,30 @@
 	        	</div>
 	{% endblock %}
 
+	<div class="row s12" style="background-color: #009caa; padding-top:50px; padding-bottom:50px;">
 
-	<div id="video" class="responsive-video">
-		<iframe width="854" height="480" src="https://www.youtube.com/embed/tE9VQOqef-E" frameborder="0" allowfullscreen></iframe>
+		<div class="row s12" style="margin-top:1%;">
+
+			<div class="responsive-video col s8">
+				<iframe class="col s12" id="video" width="854" height="480" src="https://www.youtube.com/embed/tE9VQOqef-E?showinfo=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<div class="writeup col s4">
+
+				<br><br><br>
+				<h2 style="color:white">Shop <span class="newcolor">faster</span></h2><br>
+				<h2 style="color:white">Shop <span class="newcolor">smarter</span></h2><br>
+				<h2 style="color:white">Shop <span class="newcolor">cheaper</span></h2><br>
+
+			</div>
+
+		</div>
+
 	</div>
 
-	<!-- <div class="row"> -->
+	<div class="row col s12">
+
+		<h3 class="center-align" style="margin-bottom:3%; margin-top:3%;">Latest Deals</h3>
 
 		<div id="flipid" data-WRID="WRID-146099979306551893" data-widgetType="staticBanner" data-responsive="yes" data-class="affiliateAdsByFlipkart" height="250" width="300"></div><script async src="//affiliate.flipkart.com/affiliate/widgets/FKAffiliateWidgets.js"></script>
 
@@ -25,50 +43,40 @@
 
 		<div id="amazonid" style="z-index:100"><script type="text/javascript" language="javascript"> var aax_size='300x250'; var aax_pubname = 'libra0c8-21'; var aax_src='302'; </script><script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script></div>
 
+	</div>
 
-	<!-- </div> -->
-
-	<!-- <center><h1>Welcome to Aggregator !</h1></center> -->
-
-	<!-- <nav>
-	    	<div class="nav-wrapper">
-	      		<form id="searchbar" action="/search/" method="get">
-	        		<div class="input-field col l8 s8 push-s2">
-	          			<input type="search" class="center-align" placeholder="What are we looking for today??" name="search" required>
-	          			<label for="search"><i class="material-icons">search</i><input style="visibility:hidden" type="submit" value="Search" name="submit"></label>
-	          			<i class="material-icons">close</i>
-	        		</div>
-	      		</form>
-	    	</div>
-	</nav> -->
-
-	<script data-cfasync="false">
-	          (function(r,e,E,m,b){E[r]=E[r]||{};E[r][b]=E[r][b]||function(){
-	          (E[r].q=E[r].q||[]).push(arguments)};b=m.getElementsByTagName(e)[0];m=m.createElement(e);
-	          m.async=1;m.src=("file:"==location.protocol?"https:":"")+"//s.reembed.com/G-X37WGX.js";
-	          b.parentNode.insertBefore(m,b)})("reEmbed","script",window,document,"api");
-    	</script>
+	<center><a href="/deals/" class="waves-effect waves-light btn-large center-align" style="margin-top: 300px;">Find more deals</a></center>
 
 	<style type="text/css">
 
-		iframe
+		body
 		{
-			width: 576px !important;
-			height: 360px !important;
+			background-color: white !important;
 		}
 
-		iframe
+		.newcolor
 		{
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(70%, 50%);
+			color: #006b75;
 		}
 
 		#flipid
 		{
 			position: absolute;
-			left: 0;
+			left: 10%;
+			/*float: left !important;*/
+		}
+
+		#snapid
+		{
+			position: absolute;
+			left: 40%;
+			/*float: left !important;*/
+		}
+
+		#amazonid
+		{
+			position: absolute;
+			left: 70%;
 			/*float: left !important;*/
 		}
 
