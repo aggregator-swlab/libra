@@ -27,8 +27,19 @@
 		<script>window.jQuery || document.write('<script src="preloader/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 		<script src="{% static 'preloader/js/main.js' %}"></script>
 
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/png" href="{% static 'img/Libra_small.png' %}"/>
+
 		<!-- Google search console -->
 		<meta name="google-site-verification" content="ZBNN7Lcz-P2LmKWWVdJdul_ffscetczyu_J5k3tLruU" />
+
+		<!-- Fb share -->
+
+		<meta property="og:url" content="https://libracompare.herokuapp.com" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Libra | Shop Faster | Shop Smarter | Shop Cheaper " />
+		<meta property="og:description" content="Libra is a one stop place for comparision of products from various online stores" />
+		<meta property="og:image" content="http://imgur.com/m6Wcc8v" />
 
       		{% block head_extras %}
       		{% endblock %}
@@ -113,6 +124,18 @@
             				</div>
           			</div>
         		</footer>
+
+        		<!-- Adsense -->
+
+        		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Django libra site ads -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:728px;height:90px"
+		     data-ad-client="ca-pub-7320891927243152"
+		     data-ad-slot="3711693826"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
 
 		<style type="text/css">
 
