@@ -89,7 +89,7 @@
 				         	  	   		<div class="nav-wrapper">
 							      		<form id="searchbar" action="/search/" method="get">
 							        		<div class="input-field col l8 s8 push-s2">
-							          			<input style="width:550px" type="search" placeholder="Search for a product..." name="search" required>
+							          			<input style="width:550px;" type="search" placeholder="Search for a product here ..." name="search" required>
 							          			<label for="search"><!-- <i class="material-icons">search</i> --><input style="visibility:hidden" type="submit" value="Search" name="submit"></label>
 							          			<!-- <i class="material-icons">close</i> -->
 							        		</div>
@@ -97,10 +97,10 @@
 							    	</div>
 		 				   	</li>
 						  	{% block home_block %}
-						  		<li><a class="homehighlighted" href="/index/">&nbsp&nbsp&nbsp&nbsp HOME &nbsp&nbsp&nbsp&nbsp</a></li>
+						  		<li><a class="homehighlighted" href="/index/">&nbsp&nbsp&nbsp&nbsp <strong>HOME</strong> &nbsp&nbsp&nbsp&nbsp</a></li>
 						  	{% endblock %}
-				          			<li><a class="dealshighlighted" href="/deals/">&nbsp&nbsp&nbsp&nbsp LATEST DEALS&nbsp;&nbsp&nbsp&nbsp</a></li>
-				          			<li><a class="abouthighlighted" href="/help/">&nbsp&nbsp&nbsp&nbsp HELP &nbsp&nbsp&nbsp&nbsp</a></li>
+				          			<li><a class="dealshighlighted" href="/deals/">&nbsp&nbsp&nbsp&nbsp <strong>LATEST DEALS</strong> &nbsp;&nbsp&nbsp&nbsp</a></li>
+				          			<li><a class="abouthighlighted" href="/help/">&nbsp&nbsp&nbsp&nbsp <strong>HELP</strong> &nbsp&nbsp&nbsp&nbsp</a></li>
 			        			</ul>
 						<ul class="side-nav" id="mobile-demo">
 				          			<li><a href="/mobsearch/">SEARCH</a></li>
@@ -183,6 +183,33 @@
 			main
 			{
 			    	flex: 1 0 auto;
+			}
+
+			input
+			{
+				border-left: 1px solid gray !important;
+				border-right: 1px solid gray !important;
+				/*box-shadow:inset 0 0 2px 2px #888 !important;*/
+			}
+
+			::-webkit-input-placeholder {
+			   	color: white !important;
+			   	font-weight: bold !important;
+			}
+
+			:-moz-placeholder { /* Firefox 18- */
+			   	color: white !important;
+			   	font-weight: bold !important;
+			}
+
+			::-moz-placeholder {  /* Firefox 19+ */
+			   	color: white !important;
+			   	font-weight: bold !important;
+			}
+
+			:-ms-input-placeholder {
+			   	color: white !important;
+			   	font-weight: bold !important;
 			}
 
 		</style>
