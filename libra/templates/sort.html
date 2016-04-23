@@ -82,7 +82,7 @@
 
 					<form action="/search/filter">
 
-						<h4><i class="material-icons prefix valign"> list </i> Brands</h4>
+						<h4><!-- <i class="material-icons prefix valign"> list </i> --> Brands</h4>
 
 						{% for brand in brands %}
 							<p>
@@ -91,7 +91,7 @@
 							</p>
 						{% endfor %}
 
-						<h4><i class="material-icons prefix"> code </i> Price</h4>
+						<h4><!-- <i class="material-icons prefix"> code </i> --> Price</h4>
 						<h6>(Select the upper price limit)</h6>
 			    			<p class="range-field">
 						      	<input type="range" id="test005" min="{{ min_price }}" max="{{ max_price }}" value="{{ max_price }}" />
