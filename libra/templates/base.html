@@ -40,6 +40,7 @@
 		<meta property="og:title" content="Libra | Shop Faster | Shop Smarter | Shop Cheaper " />
 		<meta property="og:description" content="Libra is a one stop place for comparision of products from various online stores" />
 		<meta property="og:image" content="http://imgur.com/m6Wcc8v" />
+		<meta property="og:site_name" content="Libra" />
 
       		{% block head_extras %}
       		{% endblock %}
@@ -47,6 +48,28 @@
 	</head>
 
 	<body>
+
+		<script>
+
+		  	window.fbAsyncInit = function()
+		  	{
+		    		FB.init(
+		    		{
+			      		appId      : '105081659899183',
+			      		xfbml      : true,
+			      		version    : 'v2.6'
+		    		});
+		  	};
+
+  			(function(d, s, id){
+     			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+     			js = d.createElement(s); js.id = id;
+     			js.src = "//connect.facebook.net/en_US/sdk.js";
+     			fjs.parentNode.insertBefore(js, fjs);
+   			}(document, 'script', 'facebook-jssdk'));
+
+		</script>
 
 		{% block loader %}
 	        	{% endblock %}
